@@ -1,0 +1,156 @@
+================================================================================
+DATASET OVERVIEW
+================================================================================
+Dataset shape: (260601, 27)
+
+First few rows:
+   building_id  geo_level_1_id  geo_level_2_id  ...     PGA_g  soil_type  damage_grade
+0       802906               6             487  ...  0.111984       soft             3
+1        28830               8             900  ...  0.085349       hard             2
+2        94947              21             363  ...  0.043410       soft             3
+3       590882              22             418  ...  0.040191     medium             2
+4       201944              11             131  ...  0.139340       hard             3
+
+[5 rows x 27 columns]
+
+Data types:
+building_id                                 int64
+geo_level_1_id                              int64
+geo_level_2_id                              int64
+geo_level_3_id                              int64
+count_floors_pre_eq                         int64
+age                                         int64
+area_percentage                             int64
+height_percentage                           int64
+foundation_type                            object
+roof_type                                  object
+ground_floor_type                          object
+plan_configuration                         object
+position                                   object
+has_superstructure_adobe_mud                int64
+has_superstructure_mud_mortar_stone         int64
+has_superstructure_cement_mortar_stone      int64
+has_superstructure_mud_mortar_brick         int64
+has_superstructure_cement_mortar_brick      int64
+has_superstructure_rc_non_engineered        int64
+has_superstructure_rc_engineered            int64
+has_superstructure_timber                   int64
+magnitude                                 float64
+depth_km                                    int64
+epicentral_distance_km                    float64
+PGA_g                                     float64
+soil_type                                  object
+damage_grade                                int64
+dtype: object
+
+Missing values:
+building_id                               0
+geo_level_1_id                            0
+geo_level_2_id                            0
+geo_level_3_id                            0
+count_floors_pre_eq                       0
+age                                       0
+area_percentage                           0
+height_percentage                         0
+foundation_type                           0
+roof_type                                 0
+ground_floor_type                         0
+plan_configuration                        0
+position                                  0
+has_superstructure_adobe_mud              0
+has_superstructure_mud_mortar_stone       0
+has_superstructure_cement_mortar_stone    0
+has_superstructure_mud_mortar_brick       0
+has_superstructure_cement_mortar_brick    0
+has_superstructure_rc_non_engineered      0
+has_superstructure_rc_engineered          0
+has_superstructure_timber                 0
+magnitude                                 0
+depth_km                                  0
+epicentral_distance_km                    0
+PGA_g                                     0
+soil_type                                 0
+damage_grade                              0
+dtype: int64
+
+Target distribution:
+damage_grade
+2    148259
+3     87218
+1     25124
+Name: count, dtype: int64
+
+================================================================================
+FEATURE PREPARATION
+================================================================================
+Number of features: 42
+
+After SMOTE: [118607 118607 118607]
+
+================================================================================
+BASELINE MODEL PERFORMANCE
+================================================================================
+
+Logistic Regression:
+  Accuracy: 0.7031
+  F1-Score: 0.7081
+
+Random Forest:
+  Accuracy: 0.7476
+  F1-Score: 0.7475
+
+Gradient Boosting:
+  Accuracy: 0.7448
+  F1-Score: 0.7451
+
+XGBoost:
+  Accuracy: 0.7549
+  F1-Score: 0.7528
+
+LightGBM:
+  Accuracy: 0.7550
+  F1-Score: 0.7529
+
+Top 3 baseline models by F1:
+LightGBM 0.7528940017995259
+XGBoost 0.752754585433483
+Random Forest 0.7475367585063212
+
+================================================================================
+WEIGHTED_ENSEMBLE - DETAILED EVALUATION
+================================================================================
+
+Accuracy: 0.7555
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.65      0.62      0.64      5025
+           1       0.77      0.82      0.80     29652
+           2       0.76      0.68      0.72     17444
+
+    accuracy                           0.76     52121
+   macro avg       0.73      0.71      0.72     52121
+weighted avg       0.75      0.76      0.75     52121
+
+
+Pruning to 17 important features (mean importance threshold)
+
+================================================================================
+PRUNED_XGBOOST - DETAILED EVALUATION
+================================================================================
+
+Accuracy: 0.7381
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.56      0.66      0.61      5025
+           1       0.77      0.79      0.78     29652
+           2       0.74      0.67      0.71     17444
+
+    accuracy                           0.74     52121
+   macro avg       0.69      0.71      0.70     52121
+weighted avg       0.74      0.74      0.74     52121
+
+Pruned model accuracy: 0.7381
