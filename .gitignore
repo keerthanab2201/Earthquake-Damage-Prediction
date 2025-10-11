@@ -1,0 +1,17 @@
+# Ignore virtual environments
+venv/
+myprojectenv/
+
+# Ignore large binaries
+*.pkl
+*.h5
+*.dll
+*.exe
+*.zip
+*.rar
+*.tar
+*.gz
+
+# Ignore notebook checkpoints
+.ipynb_checkpoints/
+__pycache__/
