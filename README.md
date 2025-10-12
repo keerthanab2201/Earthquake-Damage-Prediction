@@ -65,23 +65,36 @@ This process assumes you have the project files (model.py, requirements.txt, and
 
 ### 1\. 💾 Clone the Repository
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git clone https://github.com/keerthanab2201/Earthquake-Damage-Prediction.git   `
+```bash
+git clone https://github.com/keerthanab2201/Earthquake-Damage-Prediction.git   `
+```
 
 ### 2\. 🐍 Create Virtual Environment
 
 Creating a **virtual environment** is a best practice to isolate the project's dependencies and avoid conflicts with other Python projects on your system.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   cd /path/to/your/project/  python -m venv venv  venv\Scripts\activate   `
+```bash 
+cd /path/to/your/project/
+```
+```bash
+python -m venv venv  venv\Scripts\activate
+```
 
 ### 3\. 📦 Install Requirements
 
 Use the provided requirements.txt file to install all necessary Python libraries within your newly activated virtual environment.
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   pip install -r requirements.txt   `
+```bash
+pip install -r requirements.txt   `
+```
 
 ### 4\. ▶️ Run the model
 
 Execute the main machine learning pipeline script.
+
+1. ```bash
+   python model.py
+   ```
 
 2.  **Monitor Output:** The script will print the results of the data exploration, feature preparation, baseline model performance, and the final ensemble evaluation directly to the console (or to results.txt, if redirected).
     
@@ -92,3 +105,4 @@ Execute the main machine learning pipeline script.
     *   **Weighted\_Ensemble\_confusion\_matrix.png**: The visual evaluation of the final ensemble model.
         
     *   **Pruned\_XGBoost\_confusion\_matrix.png**: The visual evaluation of the optional XGBoost model trained on pruned (selected) features.
+      
