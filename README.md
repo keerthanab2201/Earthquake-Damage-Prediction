@@ -3,6 +3,7 @@
 
 This project implements a comprehensive machine learning pipeline to predict the extent of damage (Low, Medium, or High) sustained by buildings after an earthquake, utilizing structural and seismic data. The pipeline features **advanced feature engineering**, **data balancing with SMOTE**, a **standardized scaling step**, and an **optimized weighted soft-voting ensemble** for high-performance prediction.
 
+
 🚀 Project Overview
 -------------------
 
@@ -21,6 +22,7 @@ The core of the solution is the model.py script, which automates the entire proc
 *   **Weighted Ensemble:** Utilizes a **Weighted Soft-Voting Classifier** combining high-performing models like XGBoost, LightGBM, and Random Forest for robust predictions.
     
 *   **Model Persistence:** The final ensemble model, along with the StandardScaler and TargetEncoder, is saved using joblib for easy deployment.
+
     
 
 🛠️ Requirements
@@ -57,6 +59,7 @@ The project requires Python 3.x and the following libraries. The list below is s
     
 *   results.txt: Contains the printed output from a previous run (included for reference).
     
+
 
 ⚙️ How to Run
 -------------
@@ -106,3 +109,19 @@ Execute the main machine learning pipeline script.
         
     *   **Pruned\_XGBoost\_confusion\_matrix.png**: The visual evaluation of the optional XGBoost model trained on pruned (selected) features.
       
+
+
+📊 Baseline Models Used
+-----------------------
+
+The following five models were trained and evaluated comparatively in the train\_baseline\_models function to establish performance benchmarks.
+
+*   logistic regression
+    
+*   random forest classifier
+    
+*   gradient boosting classifier
+    
+*   XGBoost classifier 
+    
+*   lightGBM classifier
